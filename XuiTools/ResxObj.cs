@@ -17,7 +17,7 @@
             var len = Content.Length;
             ret.Add((byte)(len >> 8));
             ret.Add((byte)(len));
-            ret.AddRange(Encoding.BigEndianUnicode.GetBytes(Content));
+            ret.AddRange(Encoding.BigEndianUnicode.GetBytes(RTeeL.RtlConverter.FixArabicAndFarsi(Content)));
             return ret.ToArray();
         }
 

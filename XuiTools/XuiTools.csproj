@@ -36,6 +36,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="..\RTeeL\RTeeL\LetterDefinition.cs">
+      <Link>RTeel\LetterDefinition.cs</Link>
+    </Compile>
+    <Compile Include="..\RTeeL\RTeeL\LetterDefinitions.cs">
+      <Link>RTeel\LetterDefinitions.cs</Link>
+    </Compile>
+    <Compile Include="..\RTeeL\RTeeL\RTLConverter.cs">
+      <Link>RTeel\RTLConverter.cs</Link>
+    </Compile>
     <Compile Include="Bin2Resx.cs" />
     <Compile Include="PackageFileEntry.cs" />
     <Compile Include="ParseHelper.cs" />
