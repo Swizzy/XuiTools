@@ -17,7 +17,7 @@
             var len = Content.Length;
             ret.Add((byte)(len >> 8));
             ret.Add((byte)(len));
-            ret.AddRange(Encoding.BigEndianUnicode.GetBytes(RTeeL.RtlConverter.FixArabicAndFarsi(Content)));
+            ret.AddRange(!Regex.IsMatch(Content, "[\u0600-\u06FF]+") ? Encoding.BigEndianUnicode.GetBytes(Content) : Encoding.BigEndianUnicode.GetBytes(RTeeL.RtlConverter.FixArabicAndFarsi(Content)));
             return ret.ToArray();
         }
 
