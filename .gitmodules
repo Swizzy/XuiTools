@@ -1,3 +1,3 @@
 [submodule "RTeeL"]
 	path = RTeeL
-	url = git@github.com:Swizzy/RTeeL.git
+	url = https://github.com/Swizzy/RTeeL.git
