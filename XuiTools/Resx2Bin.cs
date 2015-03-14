@@ -38,9 +38,17 @@
             return ConvertToKeyBasedTable(ResxHelper.ReadResxObjectsFromXml(input, true, closeStreamWhenDone));
         }
 
-        public void ConvertToKeyBasedTable(ResxObj[] input, string output) { File.WriteAllBytes(output, ConvertToKeyBasedTable(input)); }
+        public void ConvertToKeyBasedTable(ResxObj[] input, string output) {
+            if (File.Exists(output))
+                File.Delete(output);
+            File.WriteAllBytes(output, ConvertToKeyBasedTable(input));
+        }
 
-        public void ConvertToKeyBasedTable(Stream input, string output, bool closeStreamWhenDone = true) { File.WriteAllBytes(output, ConvertToKeyBasedTable(input, closeStreamWhenDone)); }
+        public void ConvertToKeyBasedTable(Stream input, string output, bool closeStreamWhenDone = true) {
+            if (File.Exists(output))
+                File.Delete(output);
+            File.WriteAllBytes(output, ConvertToKeyBasedTable(input, closeStreamWhenDone));
+        }
 
         public byte[] ConvertToIndexBasedTables(ResxObj[] input) {
             var ret = new List<byte>();
@@ -71,8 +79,16 @@
             return ConvertToIndexBasedTables(ResxHelper.ReadResxObjectsFromXml(input, false, closeStreamWhenDone));
         }
 
-        public void ConvertToIndexBasedTables(ResxObj[] input, string output) { File.WriteAllBytes(output, ConvertToIndexBasedTables(input)); }
+        public void ConvertToIndexBasedTables(ResxObj[] input, string output) {
+            if (File.Exists(output))
+                File.Delete(output);
+            File.WriteAllBytes(output, ConvertToIndexBasedTables(input));
+        }
 
-        public void ConvertToIndexBasedTables(Stream input, string output, bool closeStreamWhenDone = true) { File.WriteAllBytes(output, ConvertToIndexBasedTables(input, closeStreamWhenDone)); }
+        public void ConvertToIndexBasedTables(Stream input, string output, bool closeStreamWhenDone = true) {
+            if (File.Exists(output))
+                File.Delete(output);
+            File.WriteAllBytes(output, ConvertToIndexBasedTables(input, closeStreamWhenDone));
+        }
     }
 }
