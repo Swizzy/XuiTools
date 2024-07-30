@@ -16,7 +16,7 @@
             if(magic != "XUIS")
                 throw new InvalidDataException(string.Format("Invalid Header, expected XUIS got: {0}", magic));
             input.Read(buf, 0, 2);
-            if(buf[0] != 0x01 || (buf[1] != 0x00 && buf[2] != 0x02))
+            if(buf[0] != 0x01 || (buf[1] != 0x00 && buf[1] != 0x02))
                 throw new NotSupportedException();
             var indexed = buf[1] == 0x02;
             input.Read(buf, 0, 4); // We don't need this shit!
